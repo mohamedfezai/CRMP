@@ -1,0 +1,89 @@
+﻿@model CRMP.Domain.Entities.Store
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/BackLayout.cshtml";
+}
+
+<div class="x_panel" ; style="width:auto">
+    <div class="x_title">
+        <div>
+            <h2 style="color:red;font-size: x-large">
+                Etes-vous sûr de vouloir supprimer @Model.storeName ?
+            </h2>
+        </div>
+
+        <dl class="dl-horizontal">
+             <dt style="color:black;font-size: medium">
+                @Html.DisplayNameFor(model => model.storeImage)
+            </dt>
+             <dd>
+                 @{string path = "~/Content/uploads/" + Model.storeImage;}
+
+                 <img src="@Url.Content(path)" width="250" height="180" />
+             </dd>
+            <dt style="color:black;font-size: medium">
+                @Html.DisplayNameFor(model => model.storeName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.storeName)
+            </dd>
+
+            <dt style="color:black;font-size: medium">
+                @Html.DisplayNameFor(model => model.storeaddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.storeaddress)
+            </dd>
+
+            <dt style="color:black;font-size: medium">
+                @Html.DisplayNameFor(model => model.Heure_ouverture)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Heure_ouverture)
+            </dd>
+
+            <dt style="color:black;font-size: medium">
+                @Html.DisplayNameFor(model => model.Heure_fermeture)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Heure_fermeture)
+            </dd>
+
+            <dt style="color:black;font-size: medium">
+                @Html.DisplayNameFor(model => model.storeNum)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.storeNum)
+            </dd>
+
+            <dt style="color:black;font-size: medium">
+                @Html.DisplayNameFor(model => model.storeDesc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.storeDesc)
+            </dd>
+
+        </dl>
+
+
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <div class="col-md-9 col-sm-9  offset-md-3">
+
+                <input type="submit" value="Supprimer" class="btn btn-danger" />
+            </div>
+        </div>
+    }
+</div>
+@Html.ActionLink("Retour à la liste", "Index")

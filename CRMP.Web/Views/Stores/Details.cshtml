@@ -1,0 +1,67 @@
+﻿@model CRMP.Domain.Entities.Store
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/BackLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Store</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.storeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.storeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.storeaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.storeaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Heure_ouverture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Heure_ouverture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Heure_fermeture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Heure_fermeture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.storeNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.storeNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.storeDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.storeDesc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StoreId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

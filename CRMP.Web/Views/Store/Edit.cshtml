@@ -1,0 +1,101 @@
+﻿@model CRMP.Domain.Entities.Store
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/BackLayout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="x_panel">
+    <div class="x_title">
+        <div class="form-horizontal">
+            <h4>Modifier @Model.storeName</h4>
+            <hr />
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.StoreId)
+
+
+            <div class="form-group">
+            @Html.LabelFor(model => model.storeImage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("file", "", new { type = "file" })
+                @Html.ValidationMessageFor(model => model.storeImage, "", new { @class = "text-danger" })
+            </div>
+        </div>  
+            &nbsp;
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.storeName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.storeName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.storeName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            &nbsp;
+            <div class="form-group">
+                @Html.LabelFor(model => model.storeaddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.storeaddress, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.storeaddress, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            &nbsp;
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Heure_ouverture, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Heure_ouverture, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Heure_ouverture, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            &nbsp;
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Heure_fermeture, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Heure_fermeture, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Heure_fermeture, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            &nbsp;
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.storeNum, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.storeNum, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.storeNum, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            &nbsp;
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.storeDesc, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.storeDesc, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.storeDesc, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            &nbsp;
+
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-9 col-sm-9  offset-md-3">
+            @* <input type="submit" value="Retour" class="btn btn-primary" />*@
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" value="Modifier" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
